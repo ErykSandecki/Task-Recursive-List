@@ -46,9 +46,7 @@ export class Database {
 
     request.onsuccess = event => {};
 
-    request.onerror = event => {
-      this.renderSwal("error", "The data has been written failed");
-    };
+    request.onerror = event => {};
   }
 
   public read() {
