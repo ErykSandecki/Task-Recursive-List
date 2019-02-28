@@ -1,5 +1,4 @@
 <mat-card>
-  
   <label>Condition:</label>
   <form class="form-inline">
     <div class="form-group col-8">
@@ -13,13 +12,16 @@
       </select>
     </div>
     <div class="form-group col-3">
-      <app-check-form [type]="parentForm.parentType" [condition]="parentForm.condition"></app-check-form>
+      <app-check-form
+        [type]="parentForm.parentType"
+        [condition]="parentForm.condition"
+      ></app-check-form>
     </div>
   </form>
 
   <div class="form-group">
     <label>Question:</label>
-    <input type="text" class="form-control" [(ngModel)]="parentForm.question"/>
+    <input type="text" class="form-control" [(ngModel)]="parentForm.question" />
   </div>
 
   <div class="form-group">
@@ -41,6 +43,14 @@
   </div>
 </mat-card>
 
-<div style="margin-left:50px;" *ngFor="let sub of parentForm.subForm; let i = index">
-  <app-sub-input [parentForm]="sub" [deleteSubInput]="deleteSub" [parent]="parentForm" [indexSub]="i"></app-sub-input>
+<div
+  style="margin-left:50px;"
+  *ngFor="let sub of parentForm.subForm; let i = index"
+>
+  <app-sub-input
+    [parentForm]="sub"
+    [deleteSubInput]="deleteSub"
+    [parent]="parentForm"
+    [indexSub]="i"
+  ></app-sub-input>
 </div>

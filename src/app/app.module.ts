@@ -11,7 +11,8 @@ import { CheckFormComponent } from './sub-input/check-form/check-form.component'
 @NgModule({
   declarations: [
     AppComponent, 
-    SubInputComponent, CheckFormComponent
+    SubInputComponent, 
+    CheckFormComponent
   ],
   imports: [
     BrowserModule,
