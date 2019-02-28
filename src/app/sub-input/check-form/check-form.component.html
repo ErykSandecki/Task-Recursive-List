@@ -1,0 +1,11 @@
+<!-- Return once input on based variable type -->
+<input type="text" class="form-control" *ngIf="type.toLowerCase() === 'text'" [(ngModel)]="condition.value">
+
+<input type="number" class="form-control" *ngIf="type.toLowerCase() === 'number'" [(ngModel)]="condition.value">
+
+<div class="form-check form-check-inline" *ngIf="type.toLowerCase() === 'boolean'">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Yes" [(ngModel)]="condition.value">
+    <label class="form-check-label">Yes</label>
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" value="No" [(ngModel)]="condition.value">
+    <label class="form-check-label">No</label>
+</div>

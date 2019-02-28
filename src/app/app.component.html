@@ -1,0 +1,41 @@
+<section>
+  <h3 class="card-title">Form Builder</h3>
+
+  <div *ngFor="let parent of parentForm; let i = index">
+    <mat-card>
+      
+      <div class="form-group">
+        <label>Question:</label>
+        <input type="email" class="form-control" [(ngModel)]="parent.question" />
+      </div>
+
+      <div class="form-group">
+        <label>Type</label>
+        <select class="form-control" [(ngModel)]="parent.type">
+          <option value="text">Text</option>
+          <option value="number">Number</option>
+          <option value="boolean">Yes / No</option>
+        </select>
+      </div>
+
+      <div class="form-action">
+        <button mat-raised-button color="primary" (click)="createSubInput(parent)">
+          Add Sub-Input
+        </button>
+        <button mat-raised-button color="warn" (click)="deleteParentInput(i)">
+          Delete
+        </button>
+      </div>
+
+    </mat-card>
+
+    <div style="margin-left:50px;" *ngFor="let sub of parent.subForm; let j = index">
+      <app-sub-input [parentForm]="sub" [deleteSubInput]="deleteSubInput" [parent]="parent" [indexSub]="j"></app-sub-input>
+    </div>
+  </div>
+
+  <button mat-raised-button color="primary" (click)="createInput()">
+    Add Input
+  </button>
+
+</section>
