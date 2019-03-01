@@ -1,7 +1,7 @@
 import { Component, OnInit, DoCheck } from "@angular/core";
 
 import { Database } from "./database.service";
-import { FormInput } from "./model/form-inut";
+import { FormInput } from "./model/form-input";
 import Swal, { SweetAlertType } from "sweetalert2";
 
 @Component({

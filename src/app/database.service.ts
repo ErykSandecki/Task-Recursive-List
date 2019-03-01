@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable, BehaviorSubject } from "rxjs";
-import { FormInput } from "./model/form-inut";
+import { FormInput } from "./model/form-input";
 
 import Swal, { SweetAlertType } from "sweetalert2";
 
@@ -32,14 +32,14 @@ export class Database {
 
     this.request.onupgradeneeded = event => {
       this.database = event.target["result"];
-      var objectStore = this.database.createObjectStore("formBuilder", {
+      const objectStore = this.database.createObjectStore("formBuilder", {
         keyPath: "id"
       });
     };
   }
 
   public add() {
-    var request = this.database
+    const request = this.database
       .transaction(["formBuilder"], "readwrite")
       .objectStore("formBuilder")
       .add({ id: 1, data: [] });
@@ -50,9 +50,9 @@ export class Database {
   }
 
   public read() {
-    var transaction = this.database.transaction(["formBuilder"]);
-    var objectStore = transaction.objectStore("formBuilder");
-    var request = objectStore.get(1);
+    const transaction = this.database.transaction(["formBuilder"]);
+    const objectStore = transaction.objectStore("formBuilder");
+    const request = objectStore.get(1);
 
     request.onerror = event => {
       this.renderSwal("error", "Transaction failed");
@@ -72,7 +72,7 @@ export class Database {
       return;
     }
 
-    var request = this.database
+    const request = this.database
       .transaction(["formBuilder"], "readwrite")
       .objectStore("formBuilder")
       .put({ id: 1, data: formBuilder });

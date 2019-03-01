@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { FormInput } from "../model/form-inut";
+import { FormInput } from "../model/form-input";
 
 import Swal, { SweetAlertType } from "sweetalert2";
 
