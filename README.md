@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Install
 
-Yarn install
+`yarn install`
 
 ## Development server
 
